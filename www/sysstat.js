@@ -31,7 +31,7 @@ $(function () {
                 type: 'area'
             },
             title: {
-                text: 'sysstats for bezdomni.net'
+                text: 'sysstat data'
             },
             xAxis: {
                 type: "datetime"

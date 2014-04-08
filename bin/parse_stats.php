@@ -14,14 +14,14 @@ foreach (scandir(SOURCE_DIR) as $file) {
 	$data = `sadf -d $path`;
 	$lines = explode("\n", $data);
 
-	// Remove header
-	unset($lines[0]);
-
 	// Line pattern:
 	// # hostname;interval;timestamp;CPU;%user;%nice;%system;%iowait;%steal;%idle
 
 	foreach ($lines as $line) {
 		if (empty($line)) {
+			continue;
+		}
+		if ($line[0] === '#') {
 			continue;
 		}
 
